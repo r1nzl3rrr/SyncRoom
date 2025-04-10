@@ -1,0 +1,31 @@
+<div class="video-chat-container">
+    <h2>1. Start your Webcam</h2>
+    <div class="videos">
+      <div class="video-container">
+        <video #webcamVideo autoplay playsinline></video>
+      </div>
+      <div class="video-container">
+        <video #remoteVideo autoplay playsinline></video>
+      </div>
+    </div>
+    <button [disabled]="webcamButtonDisabled" (click)="startWebcam()">Start webcam</button>
+  
+    <h2>2. Create a new Call</h2>
+    <button [disabled]="callButtonDisabled" (click)="createCall()">Create Call (offer)</button>
+    
+    <div *ngIf="callId" class="call-info">
+      <p>Your call ID: <strong>{{ callId }}</strong></p>
+      <p>Share this ID with the person you want to call</p>
+    </div>
+  
+    <h2>3. Join a Call</h2>
+    <p>Answer the call from a different browser window or device</p>
+    
+    <div class="answer-container">
+      <input [(ngModel)]="callId" placeholder="Enter Call ID" />
+      <button [disabled]="answerButtonDisabled" (click)="answerCall()">Answer</button>
+    </div>
+  
+    <h2>4. Hangup</h2>
+    <button [disabled]="hangupButtonDisabled" (click)="hangup()">Hangup</button>
+  </div>

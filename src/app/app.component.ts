@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { VideoChatComponent } from "./components/video-chat/video-chat.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, VideoChatComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
